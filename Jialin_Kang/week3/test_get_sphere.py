@@ -24,7 +24,7 @@ def test_get_sphere():
     c = (40, 50, 60)
     d = (70, 80, 90)
 
-    value = ndmg.graph.get_sphere(a, r, c, d)
+    value = ndmg.graph.gen_graph.get_sphere(a, r, c, d)
 
     test = [[ 9, 19, 30],
             [ 9, 19, 31],
