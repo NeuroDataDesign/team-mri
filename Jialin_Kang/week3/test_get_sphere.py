@@ -1,20 +1,21 @@
 import numpy as np
+import ndmg
 
 np.set_printoptions(threshold=np.inf)
 
 
-def get_sphere(coords, r, vox_dims, dims):
-    r = float(r)
-    xx, yy, zz = [
-        slice(-r / vox_dims[i], r / vox_dims[i] + 0.01, 1) for i in range(len(coords))
-    ]
-    cube = np.vstack([row.ravel() for row in np.mgrid[xx, yy, zz]])
-    sphere = cube[:, np.sum(np.dot(np.diag(vox_dims), cube) ** 2, 0) ** 0.5 <= r]
-    sphere = np.round(sphere.T + coords)
-    neighbors = sphere[
-                (np.min(sphere, 1) >= 0) & (np.max(np.subtract(sphere, dims), 1) <= -1), :
-                ].astype(int)
-    return neighbors
+# def get_sphere(coords, r, vox_dims, dims):
+#     r = float(r)
+#     xx, yy, zz = [
+#         slice(-r / vox_dims[i], r / vox_dims[i] + 0.01, 1) for i in range(len(coords))
+#     ]
+#     cube = np.vstack([row.ravel() for row in np.mgrid[xx, yy, zz]])
+#     sphere = cube[:, np.sum(np.dot(np.diag(vox_dims), cube) ** 2, 0) ** 0.5 <= r]
+#     sphere = np.round(sphere.T + coords)
+#     neighbors = sphere[
+#                 (np.min(sphere, 1) >= 0) & (np.max(np.subtract(sphere, dims), 1) <= -1), :
+#                 ].astype(int)
+#     return neighbors
 
 
 def test_get_sphere():
@@ -23,7 +24,7 @@ def test_get_sphere():
     c = (40, 50, 60)
     d = (70, 80, 90)
 
-    value = get_sphere(a, r, c, d)
+    value = ndmg.graph.get_sphere(a, r, c, d)
 
     test = [[ 9, 19, 30],
             [ 9, 19, 31],
