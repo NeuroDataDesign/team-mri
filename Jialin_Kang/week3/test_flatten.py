@@ -8,10 +8,10 @@
 
 import ndmg
 
-ndmg.utils.bids_utils.flatten
+
 
 def test_flatten():
     current = {'name':'liming', 'age':'20'}
-    value = flatten(current, [])
+    value = ndmg.utils.bids_utils.flatten(current, [])
     assert value == ['liming', '20']
 
