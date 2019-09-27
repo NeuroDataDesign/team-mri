@@ -24,7 +24,7 @@ def test_nifti_to_png()
 test_input_image  = mping.imread('test_nifti.nii')
 test_output_image = mping.imread('test_png.png')
 
-ndmg.utils.main(str(test_input),str(test_output),verbose=False)
+ndmg.utils.nifti_to_png.main(str(test_input),str(test_output),verbose=False)
 
 test = np.loadtxt(str(test_output))
 rtest= imghdr.what(str(test_output))
