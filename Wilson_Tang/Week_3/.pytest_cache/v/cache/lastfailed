@@ -1,0 +1,6 @@
+{
+  "test.py::test_get_braindata": true,
+  "test.py::test_get_braindata_np": true,
+  "test.py::test_match_target_vox_res_1mm": true,
+  "test.py::test_rescale_bvac": true
+}
