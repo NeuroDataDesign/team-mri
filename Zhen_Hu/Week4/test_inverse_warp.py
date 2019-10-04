@@ -13,7 +13,7 @@ import sys.argv as argv
 
 from ndmg.utils import reg_utils as rgu
 
-def test_inverse_warp(self):
+def test_inverse_warp(argv):
 """Parameters
     ----------
     ref : str
@@ -27,9 +27,9 @@ def test_inverse_warp(self):
     out= r"/Users/zhenhu/Documents/Neuro_Data_Design/Downloads/BNU1/BNU1_2/output"
     warp=r"/Users/zhenhu/Documents/Neuro_Data_Design/Downloads/BNU1/BNU1_2/input/warp2.nii.gz"
 
-    test_ref=self.t1w_brain
-    test_out=self.mni2t1w_warp
-    test_warp=self.warp_t1w2mni
+    test_ref=argv.t1w_brain
+    test_out=argv.mni2t1w_warp
+    test_warp=argv.warp_t1w2mni
 
     Assume=rgu.inverse_warp(test_ref,test_out,test_warp)
     Real=rgu.inverse_warp(ref,out,warp)
@@ -39,4 +39,3 @@ def test_inverse_warp(self):
     assert Real_matrix=Text_matrix
 
 test_inverse_warp(argv)
-self=argv
