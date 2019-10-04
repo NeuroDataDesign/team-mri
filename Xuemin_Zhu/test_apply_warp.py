@@ -1,6 +1,8 @@
+#This is a function to test apply_warp
 import warnings
 
 warnings.simplefilter("ignore")
+
 from ndmg.utils import gen_utils as mgu
 import nibabel as nib
 import numpy as np
@@ -12,6 +14,7 @@ import scipy.io as scio
 from ndmg.utils import reg_utils as rgu
 
 def test_apply_warp()
+
 ref= r"/usr/local/fsl/data/standard/MNI152_T1_1mm.nii.gz"
 inp= r"/Users/xueminzhu/Downloads/BNU1_2/input/inp.nii"
 out= r"/Users/xueminzhu/Downloads/BNU1_2/output"
