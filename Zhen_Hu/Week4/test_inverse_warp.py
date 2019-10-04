@@ -9,7 +9,8 @@ import nilearn.image as nl
 import os
 import os.path as op
 import scipy.io as scio
-import sys.argv as argv 
+import sys.argv as argv
+
 
 from ndmg.utils import reg_utils as rgu
 
@@ -31,8 +32,8 @@ def test_inverse_warp(argv):
     test_out=argv.mni2t1w_warp
     test_warp=argv.warp_t1w2mni
 
-    Assume=rgu.inverse_warp(test_ref,test_out,test_warp)
-    Real=rgu.inverse_warp(ref,out,warp)
+    Assume=mgu.inverse_warp(test_ref,test_out,test_warp)
+    Real=mgu.inverse_warp(ref,out,warp)
     Real_matrix=scio.loadmat(Real)
     Test_matrix=scio.loadmat(Assume)
 
