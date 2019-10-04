@@ -2,7 +2,7 @@
 import warnings
 
 warnings.simplefilter("ignore")
-from ndmg.utils import gen_utils as mgu
+from ndmg.utils import reg_utils as rgu
 import nibabel as nib
 import numpy as np
 import nilearn.image as nl
@@ -32,8 +32,8 @@ def test_inverse_warp(argv):
     test_out=argv.mni2t1w_warp
     test_warp=argv.warp_t1w2mni
 
-    Assume=mgu.inverse_warp(test_ref,test_out,test_warp)
-    Real=mgu.inverse_warp(ref,out,warp)
+    Assume=rgu.inverse_warp(test_ref,test_out,test_warp)
+    Real=rgu.inverse_warp(ref,out,warp)
     Real_matrix=scio.loadmat(Real)
     Test_matrix=scio.loadmat(Assume)
 
