@@ -37,6 +37,6 @@ def test_inverse_warp(argv):
     Real_matrix=scio.loadmat(Real)
     Test_matrix=scio.loadmat(Assume)
 
-    assert Real_matrix=Text_matrix
+    assert Real_matrix=Test_matrix
 
 test_inverse_warp(argv)
