@@ -14,7 +14,7 @@ import pytest
 
 from ndmg.utils import reg_utils as rgu
 
-def test_apply_warp():
+def test_apply_warp(tmp_path):
  
     #trainout= r"/Users/xueminzhu/ndmg_outputs/tmp/reg_a/desikan_space-MNI152NLin6_res-2x2x2_reor_RAS_nores_aligned_atlas_skull.nii.gz"
     
