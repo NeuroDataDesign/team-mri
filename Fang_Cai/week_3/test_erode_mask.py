@@ -1,6 +1,5 @@
 import ndmg
 import warnings
-
 warnings.simplefilter("ignore")
 from ndmg.utils import gen_utils as mgu
 import nibabel as nib
